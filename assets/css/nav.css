@@ -1,0 +1,19 @@
+nav > div > a img{
+    height: 70px;
+}
+
+nav > div > a{
+    margin: -10px;
+}
+
+.texton{
+    color: rgb(46, 46, 46);
+    font-size: 17px;
+    font-family: 'Impact';
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navcolor{
+    background: linear-gradient(rgb(255, 181, 181), rgb(224, 209, 255)); border: 1px solid #3a0707; border-radius: 0px;
+}
