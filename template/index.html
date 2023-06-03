@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block titulo %}
+Inicio
+{% endblock titulo %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+{% block contenido %}
+<main>
+    <h1 class="mb-3 pt-3">Menu del día</h1>
+    <!-- Card -->
+    <section class="d-flex" style="justify-content: center;">
+        <div class="row">
+            <section class="col-md-4">
+                <article class="card pb-3" style="width: 18rem;">
+                    <img src="{% static '/img/cook.webp' %}" class="card-img-top cardi" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lasaña</h5>
+                        <p class="card-text">[descripción]</p>
+                        <section class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio]</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
+                        </section>
+                    </div>
+                    <div class="d-flex" style="justify-content: center;">
+                        <a href="" class="btn btn-dark">Comprar</a>
+                    </div>
+                </article>
+            </section>
+            <section class="col-md-4">
+                <article class="card pb-3" style="width: 18rem;">
+                    <img src="{% static '/img/cook2.jpg' %}" class="card-img-top cardi" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pasta Alfredo</h5>
+                        <p class="card-text">[descripción]</p>
+                        <section class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
+                        </section>
+                    </div>
+                    <div class="d-flex" style="justify-content: center;">
+                        <a href="" class="btn btn-dark">Comprar</a>
+                    </div>
+                </article>
+            </section>
+            <section class="col-md-4">
+                <article class="card pb-3" style="width: 18rem;">
+                    <img src="{% static '/img/cook3.web' %}p" class="card-img-top cardi" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pollo</h5>
+                        <p class="card-text">[descripción]</p>
+                        <section class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio]</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
+                        </section>
+                    </div>
+                    <div class="d-flex" style="justify-content: center;">
+                        <a href="" class="btn btn-dark">Comprar</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </section>
+</main>
+{% endblock contenido %}
+</body>
+
+</html>
