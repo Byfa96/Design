@@ -12,18 +12,21 @@ Inicio
     <h1 class="mb-3 pt-3">Menu del día</h1>
     <!-- Card -->
     <!-- A futuro ira un cilco for acá con solo el elemento -->
-    
+
     <section class="">
         <div class="row">
+            <!-- Empieza a recorrer la lista de diccionarios -->
+            {% for producto in productos %}
+                
+            
             <section class="col-md-4">
                 <article class="card pb-3">
-                    <img src="{% static '/img/cook.webp' %}" class="card-img-top cardi" alt="...">
+                    <img src="{% static producto.img %}" class="card-img-top cardi" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Lasaña</h5>
-                        <p class="card-text">[descripción]</p>
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <p class="card-text">{{ producto.descripcion }}</p>
                         <section class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio]</a>
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">{{ producto.precio }}</a>
                         </section>
                     </div>
                     <div class="">
@@ -31,38 +34,7 @@ Inicio
                     </div>
                 </article>
             </section>
-            <section class="col-md-4">
-                <article class="card pb-3">
-                    <img src="{% static '/img/cook2.jpg' %}" class="card-img-top cardi" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Pasta Alfredo</h5>
-                        <p class="card-text">[descripción]</p>
-                        <section class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio</a>
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
-                        </section>
-                    </div>
-                    <div class="">
-                        <a href="" class="btn btn-dark">Comprar</a>
-                    </div>
-                </article>
-            </section>
-            <section class="col-md-4">
-                <article class="card pb-3">
-                    <img src="{% static '/img/cook3.web' %}p" class="card-img-top cardi" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Pollo</h5>
-                        <p class="card-text">[descripción]</p>
-                        <section class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Precio]</a>
-                            <a href="#" class="btn btn-sm btn-outline-secondary">[Valor]</a>
-                        </section>
-                    </div>
-                    <div class="">
-                        <a href="" class="btn btn-dark">Comprar</a>
-                    </div>
-                </article>
-            </section>
+            {% endfor %}
         </div>
     </section>
 </main>
