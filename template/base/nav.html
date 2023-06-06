@@ -1,21 +1,20 @@
-{% load static %}
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+{% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}" />
 {% endblock css %}
 <header class="">
     <nav class="navbar navbar-expand-lg navbar-dark navcolor">
         <div class="container-fluid">
-            <a class="navbar-brand tittle" href="{% url 'inicio' %}"><img src="{% static '/img/image2.png '%}" alt=""></a>
+            <a class="navbar-brand tittle" href="{% url 'inicio' %}"><img src="{% static '/img/image2.png '%}"
+                    alt="" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">
-                        <a class="nav-link  texton" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                        <a class="nav-link texton" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link texton" href="#">Contacto</a>
@@ -29,20 +28,20 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Inciar sesion</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'registro' %}">Registrarse</a></li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'registro' %}">Registrarse</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link texton" href="">Saldo: $</a>
                     </li>
-
-
                 </ul>
 
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search" />
                     <button class="btn btn-dark" type="submit">Buscar</button>
                 </form>
             </div>

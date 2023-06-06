@@ -29,7 +29,7 @@ main > section{
 }
 
 /* Posicion del boton */
-main > section article div:nth-child(3){
+main > section div:nth-child(3){
     display: flex;
     justify-content: center;
 }
