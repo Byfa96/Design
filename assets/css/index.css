@@ -23,10 +23,6 @@ section > article > h5{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-main > section{
-    display: block;
-}
-
 /* Posicion del boton */
 main > section div:nth-child(3){
     display: flex;
