@@ -15,7 +15,7 @@ productos = [
     },
     {   'id':'3',
         'img':'img/cook3.webp',
-        'nombre': 'Pollo',
+        'nombre': 'Pollo Krispy',
         'descripcion':'[Descripción]',
         'precio':'[3000]',
         

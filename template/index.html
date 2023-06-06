@@ -14,19 +14,24 @@ Inicio
 
 
     <section class="container">
-        <div class="row container">
+        <div class="row container {% if productos|length == 1 %}d-flex justify-content-center{% endif %}">
             <!-- Empieza a recorrer la lista de diccionarios -->
             {% for producto in productos %}
                 
             
-            <section class="col-md-4">
+            <section class="col-md-4 py-3">
                 <article class="card pb-3">
                     <img src="{% static producto.img %}" class="card-img-top cardi" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <p class="card-text">{{ producto.descripcion }}</p>
-                        <section class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">{{ producto.precio }}</a>
+                        <section class="d-flex justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-dark">Precio</a>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-dark">{{ producto.precio }}</a>
+                            </div>
                         </section>
                     </div>
                     <div class="">
