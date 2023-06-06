@@ -24,8 +24,7 @@ section > article > h5{
 }
 
 main > section{
-    display: flex;
-    justify-content: center;
+    display: block;
 }
 
 /* Posicion del boton */

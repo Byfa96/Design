@@ -40,8 +40,8 @@
                     </li>
                 </ul>
 
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search" />
+                <form action="{% url 'inicio' %}" method="GET" class="d-flex" role="search">
+                    <input name="buscador" class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search" />
                     <button class="btn btn-dark" type="submit">Buscar</button>
                 </form>
             </div>
