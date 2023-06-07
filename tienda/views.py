@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 #from .views import 
 # from .productos import productos
-from .models import Producto
+from .models import Producto, Carrito
 def mostrar_inicio(request):
     #Se traen los datos a la plantilla
     productos = Producto.objects.all()
@@ -22,5 +22,14 @@ def mostrar_inicio(request):
 def mostrar_registro(request):
     return render(request, 'registro.html')
 
+def añadir_carro(request):
+    user=request.user
+    product_id=request.GET.get('prod_id')
+    product = Producto.objects.get(id=product_id)
+    Carrito(user=user,product=product).save()
+    return redirect("/carrito")
+
 def mostrar_carrito(request):
-    return render(request, 'carrito.html')
+    user = request.user
+    cart = Carrito.objects.filter(user=user)
+    return render(request, 'carrito.html', locals())

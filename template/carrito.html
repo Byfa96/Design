@@ -5,5 +5,23 @@
 {% endblock titulo %}
 
 {% block contenido %}
-
+<div class="row">
+    {% if cart %}
+        <h1> Carrito de compras</h1>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Carro</h3>
+                    {% for item in cart %}
+                    <div class="row">
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
 {% endblock contenido %}
