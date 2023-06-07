@@ -15,12 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from .views import mostrar_inicio, mostrar_registro
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', mostrar_inicio, name='inicio'),
-    path('registro/', mostrar_registro, name='registro')
+    path('', include('tienda.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#Importante esta ultima linea, es una desgraciada si quieres cargar imagenes desde media/lo-que-hayas-puesto

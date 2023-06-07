@@ -15,5 +15,7 @@ nav > div > a{
 }
 
 .navcolor{
-    background: linear-gradient(rgb(255, 181, 181), rgb(224, 209, 255)); border: 1px solid #3a0707; border-radius: 0px;
+    background: linear-gradient(rgb(255, 181, 181), rgb(224, 209, 255)); 
+    border: 1px solid #3a0707; 
+    border-radius: 0px;
 }
