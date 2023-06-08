@@ -75,5 +75,8 @@ def salir(request):
 
 ###Fin login/register/logout
 
+def carro(request):
+    return render(request, 'carrito.html')
+
 
 
