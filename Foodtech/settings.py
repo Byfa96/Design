@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tienda'
+    'sweetify',
+    'tienda',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+#Configuración archivos media
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = join(BASE_DIR, 'media')
+
+#Integración de sweetify
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

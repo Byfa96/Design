@@ -3,3 +3,82 @@
 {% block titulo %}
     Registro
 {% endblock titulo %}
+{% block contenido %}
+<form method="POST">
+    {% csrf_token %}
+    <main class="container">
+        <section class="row">
+            <h1 class="text-center">Bienvenido</h1>
+        </section>
+        <section class="row">
+            <fieldset class="col-12">
+                <label for="{{ formulario.username.id_for_label }}" >
+                    {{ formulario.username.label }}
+                </label>
+                {{ formulario.username }}
+                <p class="feedback-invalid">
+                    {{ formulario.username.errors }}
+                </p>
+            </fieldset>
+            <fieldset class="col-6">
+                <label for="{{ formulario.first_name.id_for_label }}" >
+                    {{ formulario.first_name.label }}
+                </label>
+                {{ formulario.first_name }}
+                <p class="feedback-invalid">
+                    {{ formulario.first_name.errors }}
+                </p>
+            </fieldset>
+            <fieldset class="col-6">
+                <label for="{{ formulario.last_name.id_for_label }}" >
+                    {{ formulario.last_name.label }}
+                </label>
+                {{ formulario.last_name }}
+                <p class="feedback-invalid">
+                    {{ formulario.last_name.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row">
+            <fieldset class="col-12">
+                <label for="{{ formulario.email.id_for_label }}" >
+                    {{ formulario.email.label }}
+                </label>
+                {{ formulario.email }}
+                <p class="feedback-invalid">
+                    {{ formulario.email.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row">
+            <fieldset class="col-6">
+                <label for="{{ formulario.password1.id_for_label }}" >
+                    {{ formulario.password1.label }}
+                </label>
+                {{ formulario.password1 }}
+                {{ formulario.password1.help_text }}
+                <p class="feedback-invalid">
+                    {{ formulario.password1.errors }}
+                </p>
+            </fieldset>
+            <fieldset class="col-6">
+                <label for="{{ formulario.password2.id_for_label }}" >
+                    {{ formulario.password2.label }}
+                </label>
+                {{ formulario.password2 }}
+                {{ formulario.password2.help_text }}
+                <p class="feedback-invalid">
+                    {{ formulario.password2.errors }}
+                </p>
+            </fieldset>
+        </section>
+        <section class="row">
+            <fieldset class="offset-md-4 col-md-4 col-12">
+                <div class="d-grid">
+                    <button class="btn btn-dark">Registrar</button>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+</form>
+{% endblock contenido %}

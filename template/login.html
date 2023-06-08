@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block titulo %}
+inicio sesion
+{% endblock titulo %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock css %}
+{% block contenido %}
+<main class="form-signin w-100 m-auto text-center">
+    <form method="POST">
+        {% csrf_token %}
+        <img class="my-3" src="{% static '/img/image2.png '%}" alt="">
+        <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+        <section class="row">
+            <fieldset class="form-floating offset-md-4 col-md-4 col-12">
+                {{ formulario.usuario }}
+                <label for="{{ formulario.usuario.id_for_label }}">
+                    {{ formulario.usuario.label }}
+                </label>
+                <p class="feedback-invalid">
+                    {{ formulario.usuario.errors }}
+                </p>
+            </fieldset>
+            <fieldset class="form-floating offset-md-4 col-md-4 col-12">
+                {{ formulario.contrasenia_usuario}}
+                <label for="{{ formulario.contrasenia_usuario.id_for_label }}">
+                    {{ formulario.contrasenia_usuario.label }}
+                </label>
+                <p class="feedback-invalid">
+                    {{ formulario.contrasenia_usuario.errors }}
+                </p>
+            </fieldset>
+
+
+            <button class=" mt-3 offset-md-4 col-md-4 col-12 w-20 btn btn-lg btn-dark " type="submit">Entrar</button>
+        </section>
+    </form>
+</main>
+{% endblock contenido %}
