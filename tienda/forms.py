@@ -7,10 +7,15 @@ from django.forms import (
     PasswordInput,
     EmailField,
     EmailInput,
+    Textarea,
     CheckboxInput,
     BooleanField,
-    TextInput
+    TextInput,
+    ModelForm,
+    ImageField
 )
+from .models import Producto
+
 
 class NuevoRegistro(UserCreationForm):
     def __init__(self, *args, **kwargs):
@@ -73,3 +78,17 @@ class FormularioEntrar(Form):
             }
         )
     )
+
+###Futuro formulario de productos
+
+class FormularioProducto(ModelForm):
+
+    class Meta:
+        model = Producto
+        fields = ['nombre', 'descripcion', 'precio', 'img']
+        widgets = {
+            'nombre': TextInput(attrs={'class': 'form-control'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'precio': TextInput(attrs={'class': 'form-control'}),
+            'img': TextInput(attrs={'class': 'form-control-file'}),
+        }

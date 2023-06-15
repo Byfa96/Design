@@ -1,5 +1,8 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+{% endblock css %}
 {% block titulo %}
     Registro
 {% endblock titulo %}
@@ -74,7 +77,7 @@
         </section>
         <section class="row">
             <fieldset class="offset-md-4 col-md-4 col-12">
-                <div class="d-grid">
+                <div class="d-grid my-3">
                     <button class="btn btn-dark">Registrar</button>
                 </div>
             </fieldset>

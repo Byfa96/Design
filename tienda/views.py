@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 #from .views import 
 # from .productos import productos
-from .forms import NuevoRegistro , FormularioEntrar
+from .forms import NuevoRegistro , FormularioEntrar, FormularioProducto
 from django.contrib.auth import authenticate ,logout ,login
-from django.contrib.auth.decorators import login_required
 from .models import Producto
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from sweetify import info, success, warning, error
+
 def mostrar_inicio(request):
+    return render(request, 'index.html')
+
+def mostrar_producto(request):
     productos = Producto.objects.all()
     backup = productos
     if request.method == 'GET':
@@ -20,7 +25,7 @@ def mostrar_inicio(request):
     context = {
         'productos':backup
     }
-    return render(request, 'index.html', context)
+    return render(request, 'producto.html', context)
 
 ###Temas de registro y inicio de sesión
 
@@ -77,6 +82,24 @@ def salir(request):
 
 def carro(request):
     return render(request, 'carrito.html')
+
+def listar_producto(request):
+    productos = Producto.objects.all()
+    context = {
+        'productos': productos
+    }
+    return render(request, 'producto/listar_producto.html', context)
+
+def crear_producto(request):
+    if request.method == 'POST':
+        formulario = FormularioProducto(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('lista_productos')
+    else:
+        formulario = FormularioProducto()
+    context = {'form': formulario}
+    return render(request, 'producto/crear_producto.html', context)
 
 
 

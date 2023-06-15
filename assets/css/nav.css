@@ -16,6 +16,8 @@ nav > div > a{
 
 .navcolor{
     background: linear-gradient(rgb(255, 181, 181), rgb(224, 209, 255)); 
-    border: 1px solid #3a0707; 
-    border-radius: 0px;
+    border: 0.060em solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    border-image-slice: 1;
+    border-radius: 3px;
 }

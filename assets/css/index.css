@@ -5,26 +5,25 @@
     text-shadow: 0px 0px 6px purple;
 }
 
-.cardi{
-    height: 190px;
-    border-radius: 4px;
-}
 
-main{
-    background: rgb(224, 224, 224);
-}
+
 
 main h1{
     font-family: Brush Script MT, Brush Script Std, cursive;
     text-align: center;
 }
 
-section > article > h5{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.imge{
+    height: 400px;
+    border-radius: 20px;
 }
 
-/* Posicion del boton */
-main > section div:nth-child(3){
+.carru{
+
+    width: 700px;
+}
+
+.cen{
     display: flex;
     justify-content: center;
 }

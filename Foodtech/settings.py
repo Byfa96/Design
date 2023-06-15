@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ks=c-ozuvg=e=2*n1ut5!8vmwwyn_y)m665p)50@2flmnzj=)a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['144.22.48.76']
+ALLOWED_HOSTS = [] ##Si no les carga la pagina de manera local, es porque tienen que borrar lo que esta acá
 
 
 # Application definition

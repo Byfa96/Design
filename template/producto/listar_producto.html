@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block titulo %}
+Listar Productos
+{% endblock titulo %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/producto.css' %}">
+{% endblock css %}
+
+{% block contenido %}
+<main>
+    <h1 class="mb-3 pt-3">Listado de Productos</h1>
+
+    <div class="container d-flex justify-content-end">
+        <div class="d-flex">
+            <div class="">
+                <a href="{% url 'crear_producto' %}" class="btn btn-primary">Crear Producto</a>
+            </div>
+        </div>
+    </div>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.descripcion }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <a href="" class="btn btn-sm btn-primary">Editar</a>
+                    <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No hay productos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock contenido %}

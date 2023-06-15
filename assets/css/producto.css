@@ -1,0 +1,56 @@
+
+.titulo{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    text-shadow: 0px 0px 6px purple;
+}
+
+.cardi{
+    height: 190px;
+    border-radius: 4px;
+}
+
+main{
+    background: rgb(247, 247, 247);
+}
+
+main h1{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+}
+
+section > article > h5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Posicion del boton */
+main > section div:nth-child(3){
+    display: flex;
+    justify-content: center;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.precio {
+    font-size: 18px;
+    color: #333;
+    margin-top: 1px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgb(134, 16, 65);
+  }
+
+.det {
+    font-size: 18px;
+    color: black;
+    text-shadow: 0px 0px 2px rgb(199, 33, 166);
+}
+  
