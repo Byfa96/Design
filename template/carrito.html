@@ -14,12 +14,12 @@
                     <div class="card-header text-center">
                         <strong>CARRITO</strong>
                     </div>
-                    <div class="card body p-2">
+                    <!-- <div class="card body p-2">
                         <h6>Total: <strong> 
                             $. 
                         </strong></h6>
 
-                    </div>
+                    </div> -->
 
                     <div class="card-element table-responsive">
                         <table class="table table-condensed">
@@ -33,12 +33,25 @@
                             </thead>
                             <tbody class="py-4">
                                 <tr>
-                                    <td colspan="5">
-                                        <div class="alert alert-danger text-center ">
+                                    {% for d in producto %}
 
-                                            No se agregaron productos al carrito
+                                    
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th> {{d.producto}} </th>
+                                            <th colspan="3"> {{d.cantidad}} </th>
+                                            <th> {{d.precio}} </th>
+                                            <th><form method = "POST" action = "{% url 'borrar' %}">
+                                                {% csrf_token %}
+                                            <input type="hidden" name="nombre" value="{{d.producto}}">
+                                            <button type="submit" class = 'btn btn-dark'> X </button>
+                                            </form>
 
-                                        </div>
+
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    {% endfor %}
                                 </tr>
                                 </tr>
                             </tbody>
@@ -55,7 +68,7 @@
             <div class="col-lg-3 col-md-4 col-sm-3 my-4 mx-auto ">
                 <div class="card card-footer align-item-center ">
                     <a href="/ " class="btn btn-dark my-2 mx-auto ">Volver a Tienda</a>
-                    <a href="" class="btn btn-dark my-2 mx-auto ">Limpiar Carrito</a>
+                    <a href="{% url 'borrartodo' %}" class="btn btn-dark my-2 mx-auto ">Limpiar Carrito</a>
                 </div>
 
             </div>

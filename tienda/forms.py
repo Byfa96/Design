@@ -12,7 +12,8 @@ from django.forms import (
     BooleanField,
     TextInput,
     ModelForm,
-    ImageField
+    ImageField,
+    ClearableFileInput
 )
 from .models import Producto
 
@@ -82,7 +83,6 @@ class FormularioEntrar(Form):
 ###Futuro formulario de productos
 
 class FormularioProducto(ModelForm):
-
     class Meta:
         model = Producto
         fields = ['nombre', 'descripcion', 'precio', 'img']
@@ -90,5 +90,5 @@ class FormularioProducto(ModelForm):
             'nombre': TextInput(attrs={'class': 'form-control'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'precio': TextInput(attrs={'class': 'form-control'}),
-            'img': TextInput(attrs={'class': 'form-control-file'}),
+            'img': ClearableFileInput(attrs={'class': 'form-control-file'}),
         }

@@ -1,17 +1,32 @@
-<footer class="footer pt-3" style="background-color: antiquewhite; border-radius: 15px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>&copy; FoodTech 2023.</p>
-        </div>
-        <div class="col-md-6">
-          <ul class="list-inline text-md-end">
-            <li class="list-inline-item"><a class="" style="text-decoration: none; color: black;" href="#">Acerca de</a></li>
-            <div class="vr"></div>
-            <li class="list-inline-item"><a class="" style="text-decoration: none; color: black;" href="#">Contacto</a></li>
-          </ul>
-        </div>
+{% load static %}
+<footer class="footer pt-3" style="background-color: antiquewhite; border-radius: 15px; height: 200px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; FoodTech 2023.</p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline text-md-end">
+          <li class="list-inline-item"><a class="" style="text-decoration: none; color: black;" href="#">Acerca de</a></li>
+          <div class="vr"></div>
+          <li class="list-inline-item"><a class="" style="text-decoration: none; color: black;" href="#">Contacto</a></li>
+          <div class="vr"></div>
+          <li class="list-inline-item "><a class="" style="text-decoration: none; color: black;" href="https://www.google.com/maps/place/R-FoodTech/@-33.4379175,-70.6502131,17z/data=!4m6!3m5!1s0x9662c5a3b14dbf01:0x32424b2b4aee69e2!8m2!3d-33.4385039!4d-70.648872!16s%2Fg%2F11f5h33vwt?entry=ttu%22%3EDireccion%22%3E"></a></li>
+        </ul>
       </div>
     </div>
-  </footer>
-  
+    <div class="row">
+      <div class="col-md-6">
+        <p>Síguenos en:</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="https://www.facebook.com/foodtech" target="_blank"> <img src="{% static 'img/index/face.png' %}" alt="" width="50" height="50"></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/foodtech" target="_blank"><img src=" {% static 'img/index/ig.png' %}" alt="" width="50" height="50"></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/foodtech" target="_blank"><img src="{% static 'img/index/Twitter.png' %}" alt="" width="50" height="50"></a></li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </div>
+</footer>

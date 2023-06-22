@@ -36,7 +36,11 @@ Inicio
                           
                     </div>
                     <div class="">
-                        <a href="" class="btn btn-dark">Comprar</a>
+                        <form method = "POST" action = "{% url 'crear-invntario' %}">
+                            {% csrf_token %}
+                        <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                        <button type="submit" class = 'btn btn-dark'>Enviar</button>
+                        </form>
                     </div>
                 </article>
             </section>
@@ -45,6 +49,3 @@ Inicio
     </section>
 </main>
 {% endblock contenido %}
-
-
-</html>

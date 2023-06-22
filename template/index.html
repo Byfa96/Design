@@ -8,43 +8,181 @@ Inicio
 {% endblock css %}
 {% block contenido %}
 <main>
-    <!-- estilos padding bootstrap -->
-    <h1 class="mb-3 pt-3">Bienvenido</h1>
-    <!-- Card -->
-    <hr class="hr" />
-    <h1>Platos</h1>
-    <div class="container cen">
+  <!-- estilos padding bootstrap -->
+  <h1 class="mb-3 pt-3">Bienvenido</h1>
+  <!-- Card -->
+  <hr class="hr" />
+  <h1>Platos</h1>
+  <div class="container cen">
     <div id="carouselExampleIndicators" class="carousel slide carru">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner imge">
+        <div class="carousel-item active">
+          <img src="{% static 'img/cook.webp' %}" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-inner imge">
-          <div class="carousel-item active">
-            <img src="{% static 'img/cook.webp' %}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/cook2.jpg' %}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/cook3.webp' %}" class="d-block w-100" alt="...">
+        <div class="carousel-item">
+          <img src="{% static 'img/cook2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/cook3.webp' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center my-3">
+    <a class="btn btn-dark" href="{% url 'producto' %}" style="justify-content: center;">Ver los productos</a>
+  </div>
+
+  <!-- PARTE DEL IVAN -->
+
+  <div class="container cen  mt-5 ">
+
+
+    <div class="container">
+      <h2 class="section-title text-decoration text-center">PROMOCIONES </h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="product-container border">
+            <div class="card">
+              <img src="{% static 'img/index/ALBODIGAS.webp' %}" class="card-img-top" alt="Producto 1">
+              <div class="card-body">
+                <h5 class="card-title">Albóndigas con Arroz</h5>
+                <p class="card-text">Uno de nuestros platos estrella!, Sabrosa Plateada de Vacuno al horno.</p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="col-md-4">
+          <div class="product-container border">
+            <div class="card">
+              <img src="{% static 'img/index/merluzafrita.jpg' %}" class="card-img-top" alt="Producto 2">
+              <div class="card-body">
+                <h5 class="card-title">Merluza Frita</h5>
+                <p class="card-text">Perfecto acompañamiento! Palta laminada, lechuga y rúcula</p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-container border">
+            <div class="card">
+              <img src="{% static 'img/index/plateada.jpg' %}" class="card-img-top" alt="Producto 3">
+              <div class="card-body">
+                <h5 class="card-title">Plateada</h5>
+                <p class="card-text">Uno de nuestros platos estrella!, Sabrosa Plateada de Vacuno al horno</p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-container border mt-3">
+            <div class="card">
+              <img src="{% static 'img/index/pollo arvejado.jpg' %}" class="card-img-top" alt="Producto 4">
+              <div class="card-body">
+                <h5 class="card-title">Pollo Arvejado</h5>
+                <p class="card-text">Clásica y jugosa receta de Pollo acompañado arvejas, zanahoria y cebolla</p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-container border mt-3">
+            <div class="card">
+              <img src="{% static 'img/index/porotosconrienda.jpg' %}" class="card-img-top" alt="Producto 5">
+              <div class="card-body">
+                <h5 class="card-title">Porotos con rienda y Longaniza</h5>
+                <p class="card-text">Clásica receta Chilena, porotos con tallarines acompañados de una longaniza.</p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-container border mt-3">
+            <div class="card">
+              <img src="{% static 'img/index/acompañamientos.jpg' %}" class="card-img-top" alt="Producto 6">
+              <div class="card-body">
+                <h5 class="card-title">Acompañamientos</h5>
+                <p class="card-text">Champiñones salteados, Verduras Salteadas, Papas al saltedas y Choclo a la crema.
+                </p>
+                <a href="#" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center my-3">
-    <a class="btn btn-dark" href="{% url 'producto' %}" style="justify-content: center;">Ver los productos</a>
-    </div>
-{% endblock contenido %}
 
 
-</html>
+  </div>
+
+  <div class="container mt-5">
+
+
+    <section class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-header text-center">
+              <h1>Santiago Centro</h1>
+            </div>
+
+            <div class="rte text-center">
+
+              <div>Aillavilú 1030, 8320006 Santiago, Región Metropolitana
+                <span>Región Metropolitana</span><br>
+                <span>Aillavilú 1030, 8320006 Santiago</span><br>
+                <span>984428753a</span>
+              </div>
+              <div><span>Wifi/ Estacionamiento</span></div>
+              <div>
+                <!-- Aquí puedes agregar el código para mostrar el mapa -->
+              </div>
+              <div>
+                <strong>Horario</strong>
+              </div>
+              <div>
+                <span>Lun - Dom: 08:00 - 00:00 hrs.</span>
+              </div>
+              <div>
+                <span style="color: #831515;"><strong>Horario </strong></span>
+              </div>
+              <div>
+                <span>Contactanos</span>
+              </div>
+              <div>
+                <strong>FoodTech.spa@gmail.com</strong>
+              </div>
+              <h2><a
+                  href="https://www.google.com/maps/place/La+Piojera/@-33.4335938,-70.6521378,15z/data=!4m2!3m1!1s0x0:0x39b476e51989c180?sa=X&ved=2ahUKEwic_I_R6NX_AhW7q5UCHb-6BRgQ_BJ6BAhkEAg"
+                  target="_blank" title="Ubicación Juan y Medio Rosario">Ver Ubicación</a></h2>
+              <p><img style="border-radius: 15px; width: 800px; " src="{% static 'img/index/sa.jpg' %}" alt=""></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+  {% endblock contenido %}

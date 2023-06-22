@@ -4,6 +4,7 @@ from django.db.models import (Model,
                               DecimalField, 
                               ImageField, 
                               ForeignKey, 
+                              IntegerField,
                               CASCADE)
 
 
@@ -14,4 +15,8 @@ class Producto(Model):
     descripcion = TextField()
     precio = DecimalField(max_digits=8, decimal_places=2)
     img = ImageField(upload_to="comida", blank=True)
-    usuario = ForeignKey(User, on_delete = CASCADE)
+
+class InventarioCompra(Model):
+    id_usuario = ForeignKey(User, on_delete= CASCADE)
+    id_producto = ForeignKey(Producto, on_delete= CASCADE)
+    cantidad = IntegerField(null = False)

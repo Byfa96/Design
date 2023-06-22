@@ -7,7 +7,10 @@ from .models import Producto
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from sweetify import info, success, warning, error
-
+###
+from .models import Producto, InventarioCompra
+from django.contrib.auth.models import User
+###
 def mostrar_inicio(request):
     return render(request, 'index.html')
 
@@ -80,8 +83,73 @@ def salir(request):
 
 ###Fin login/register/logout
 
+#################
 def carro(request):
-    return render(request, 'carrito.html')
+    lista = []
+    if request.user.is_authenticated:
+        try:
+            user = User.objects.get(username=request.user.username)
+        except User.DoesNotExist:
+            user = None
+        if user is None:
+            return render(request, 'carrito.html')
+        
+        try:
+            existe = InventarioCompra.objects.filter(id_usuario=request.user.id)
+        except InventarioCompra.DoesNotExist:
+            existe = None
+        
+        if existe is None:
+            return render(request, 'carrito.html')
+        else:
+            for i in existe:
+                prod = Producto.objects.get(nombre = i.id_producto.nombre)
+                dic = {
+                    'producto': prod.nombre,
+                    'cantidad': i.cantidad,
+                    'precio': prod.precio * i.cantidad
+                }
+                lista.append(dic)
+            
+            cont = {
+                'producto': lista
+            }
+            
+            return render(request, 'carrito.html', cont)
+    else:
+        return render(request, 'carrito.html')
+    
+
+
+def borrar_carro(request):
+    prod = Producto.objects.get(nombre = request.POST.get('nombre'))
+    InventarioCompra.objects.get(id_producto = prod).delete()
+    return redirect('carro')
+
+
+def borrar_todo_carro(request):
+    InventarioCompra.objects.filter(id_usuario = request.user).delete()
+    success(request, 'carrito limpiado')
+    return redirect('carro')
+
+def crear_inventario(request):
+    inventario = InventarioCompra.objects.create(
+        id_usuario = request.user,
+        id_producto = Producto.objects.get(nombre = request.POST.get('nombre')),
+        cantidad = 1
+            )
+            
+    inventario.save()
+    return redirect('producto')
+
+
+
+
+
+
+
+
+##################################
 
 def listar_producto(request):
     productos = Producto.objects.all()
@@ -95,11 +163,16 @@ def crear_producto(request):
         formulario = FormularioProducto(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.save()
-            return redirect('lista_productos')
+            success(request, 'Producto añadido correctamente')
+            return redirect('listar_producto')
     else:
         formulario = FormularioProducto()
     context = {'form': formulario}
     return render(request, 'producto/crear_producto.html', context)
+
+# def eliminar_producto(request):
+#     if request.method == 'POST':
+
 
 
 

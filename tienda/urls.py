@@ -7,7 +7,10 @@ from .views import (mostrar_inicio,
                     salir, 
                     carro,
                     listar_producto,
-                    crear_producto)
+                    crear_producto,
+                    crear_inventario,
+                    borrar_carro,
+                    borrar_todo_carro)
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -19,6 +22,10 @@ urlpatterns = [
     path('carro/', carro, name='carro'),
     path('producto/', mostrar_producto, name='producto'),
     path('listar_producto/', listar_producto, name='listar_producto' ),
-    path('crear_producto/', crear_producto, name='crear_producto')
+    path('crear_producto/', crear_producto, name='crear_producto'),
+    path('crear_producto/', crear_producto, name='crear_producto'),
+    path('crear-inv/',crear_inventario, name = 'crear-invntario'),
+    path('borrar/', borrar_carro,name = 'borrar'),
+    path('borrar-todo/', borrar_todo_carro,name = 'borrartodo'),
     #
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
