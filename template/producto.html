@@ -21,7 +21,11 @@ Inicio
             
             <section class="col-md-4 py-3">
                 <article class="card pb-3">
-                    <img src="{{ producto.img.url }}" class="card-img-top cardi" alt="...">
+                    {% if producto.img %}
+                        <img src="{{ producto.img.url }}" class="card-img-top cardi" alt="...">
+                    {% else %}
+                        <img src="{% static 'img/Sin imagen.jpg' %}" class="card-img-top cardi" alt="...">
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <p class="card-text">{{ producto.descripcion }}</p>
@@ -36,10 +40,10 @@ Inicio
                           
                     </div>
                     <div class="">
-                        <form method = "POST" action = "{% url 'crear-invntario' %}">
+                        <form method="POST" action="{% url 'crear-invntario' %}">
                             {% csrf_token %}
-                        <input type="hidden" name="nombre" value="{{ producto.nombre }}">
-                        <button type="submit" class = 'btn btn-dark'>Enviar</button>
+                            <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                            <button type="submit" class='btn btn-dark'>Enviar</button>
                         </form>
                     </div>
                 </article>

@@ -8,6 +8,8 @@ from .views import (mostrar_inicio,
                     carro,
                     listar_producto,
                     crear_producto,
+                    eliminar_producto,
+                    editar_producto,
                     crear_inventario,
                     borrar_carro,
                     borrar_todo_carro)
@@ -22,10 +24,14 @@ urlpatterns = [
     path('carro/', carro, name='carro'),
     path('producto/', mostrar_producto, name='producto'),
     path('listar_producto/', listar_producto, name='listar_producto' ),
-    path('crear_producto/', crear_producto, name='crear_producto'),
-    path('crear_producto/', crear_producto, name='crear_producto'),
+    #
     path('crear-inv/',crear_inventario, name = 'crear-invntario'),
     path('borrar/', borrar_carro,name = 'borrar'),
     path('borrar-todo/', borrar_todo_carro,name = 'borrartodo'),
     #
+    path('crear_producto/', crear_producto, name='crear_producto'),
+    path('eliminar_producto/<int:producto_id>/', eliminar_producto, name='eliminar_producto'),
+    path('editar_producto/<int:producto_id>/', editar_producto, name='editar_producto'),
+
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

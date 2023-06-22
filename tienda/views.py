@@ -142,13 +142,6 @@ def crear_inventario(request):
     inventario.save()
     return redirect('producto')
 
-
-
-
-
-
-
-
 ##################################
 
 def listar_producto(request):
@@ -170,8 +163,28 @@ def crear_producto(request):
     context = {'form': formulario}
     return render(request, 'producto/crear_producto.html', context)
 
-# def eliminar_producto(request):
-#     if request.method == 'POST':
+def eliminar_producto(request, producto_id):
+    producto = Producto.objects.get(id=producto_id)
+    producto.delete()
+    success(request, 'Producto eliminado correctamente')
+    return redirect('listar_producto')
+
+def editar_producto(request, producto_id):
+    producto = Producto.objects.get(id=producto_id)
+
+    if request.method == 'POST':
+        formulario = FormularioProducto(request.POST, request.FILES, instance=producto)
+        if formulario.is_valid():
+            formulario.save()
+            success(request, 'Producto actualizado correctamente')
+            return redirect('listar_producto')
+    else:
+        formulario = FormularioProducto(instance=producto)
+
+    context = {'form': formulario}
+    return render(request, 'producto/editar_producto.html', context)
+
+
 
 
 
