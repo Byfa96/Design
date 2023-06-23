@@ -123,7 +123,7 @@ def carro(request):
 
 def borrar_carro(request):
     prod = Producto.objects.get(nombre = request.POST.get('nombre'))
-    InventarioCompra.objects.get(id_producto = prod).delete()
+    InventarioCompra.objects.filter(id_producto = prod).first().delete()
     return redirect('carro')
 
 
